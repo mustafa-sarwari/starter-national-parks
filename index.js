@@ -6,7 +6,14 @@
  * @description This application fetches and displays information about US National Parks
  */
 
-// Mock data for National Parks (using static data since NPS API requires API key)
+/**
+ * Mock data for National Parks (using static data since NPS API requires API key)
+ * 
+ * SECURITY NOTE: This data is hardcoded and controlled by the developer.
+ * If connecting to a real API or accepting user input in the future,
+ * all data must be properly sanitized before insertion into the DOM
+ * to prevent XSS attacks.
+ */
 const nationalParksData = [
     {
         id: "1",
