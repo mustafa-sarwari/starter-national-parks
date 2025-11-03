@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore America's National Parks - An interactive web application showcasing the beauty of US National Parks">
+    <title>National Parks Explorer 🏞️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🏞️ National Parks Explorer</h1>
+            <p class="tagline">Discover the beauty of America's National Parks</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="search-section">
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search for a park..." 
+                    aria-label="Search national parks"
+                >
+                <button id="search-btn" aria-label="Search">🔍 Search</button>
+            </div>
+            <div class="filters">
+                <select id="state-filter" aria-label="Filter by state">
+                    <option value="">All States</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="parks-section">
+            <div id="parks-grid" class="parks-grid">
+                <!-- Park cards will be dynamically inserted here -->
+            </div>
+            <div id="loading" class="loading hidden">Loading parks...</div>
+            <div id="error" class="error hidden"></div>
+        </section>
+
+        <section id="park-details" class="park-details hidden">
+            <button id="close-details" class="close-btn" aria-label="Close details">✕</button>
+            <div id="details-content"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 National Parks Explorer | Built by <a href="https://github.com/mustafa-sarwari" target="_blank">Mustafa Sarwari</a></p>
+            <p>Data provided by National Park Service API</p>
+        </div>
+    </footer>
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "national-parks-explorer",
+  "version": "1.0.0",
+  "description": "An interactive web application to explore America's National Parks",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html --public-url ./",
+    "dev": "parcel index.html",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "national-parks",
+    "travel",
+    "exploration",
+    "frontend",
+    "javascript",
+    "web-app",
+    "portfolio"
+  ],
+  "author": {
+    "name": "Mustafa Sarwari",
+    "email": "gm.sarwari@outlook.com",
+    "url": "https://github.com/mustafa-sarwari"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mustafa-sarwari/starter-national-parks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mustafa-sarwari/starter-national-parks/issues"
+  },
+  "homepage": "https://mustafa-sarwari.github.io/starter-national-parks/",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
