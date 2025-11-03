@@ -176,10 +176,13 @@ main {
     color: var(--text-primary);
     font-size: 0.95rem;
     line-height: 1.5;
+    /* Modern line clamping with fallback */
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    /* Fallback for browsers that don't support webkit prefixes */
+    max-height: 4.5rem; /* approximately 3 lines at 1.5 line-height */
 }
 
 /* Park Details Modal */

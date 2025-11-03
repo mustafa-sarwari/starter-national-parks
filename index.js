@@ -242,14 +242,26 @@ function createParkCard(park) {
     card.className = 'park-card';
     card.setAttribute('data-park-id', park.id);
     
-    card.innerHTML = `
-        <img src="${park.image}" alt="${park.name}" onerror="this.src='https://via.placeholder.com/800x600?text=National+Park'">
-        <div class="park-card-content">
-            <h3>${park.name}</h3>
-            <p class="location">📍 ${park.state}</p>
-            <p class="description">${park.description}</p>
-        </div>
+    // Create image element and add error handler via event listener (safer than inline onerror)
+    const img = document.createElement('img');
+    img.src = park.image;
+    img.alt = park.name;
+    img.addEventListener('error', function() {
+        this.src = 'https://via.placeholder.com/800x600?text=National+Park';
+    });
+    
+    // Create card content
+    const content = document.createElement('div');
+    content.className = 'park-card-content';
+    content.innerHTML = `
+        <h3>${park.name}</h3>
+        <p class="location">📍 ${park.state}</p>
+        <p class="description">${park.description}</p>
     `;
+    
+    // Assemble card
+    card.appendChild(img);
+    card.appendChild(content);
     
     // Add click event to show details
     card.addEventListener('click', () => showParkDetails(park));
@@ -265,8 +277,24 @@ function showParkDetails(park) {
     const detailsModal = document.getElementById('park-details');
     const detailsContent = document.getElementById('details-content');
     
-    detailsContent.innerHTML = `
-        <img src="${park.image}" alt="${park.name}" style="width: 100%; border-radius: 8px; margin-bottom: 1.5rem;" onerror="this.src='https://via.placeholder.com/800x600?text=National+Park'">
+    // Clear previous content
+    detailsContent.innerHTML = '';
+    
+    // Create image element with error handler via event listener (safer than inline onerror)
+    const img = document.createElement('img');
+    img.src = park.image;
+    img.alt = park.name;
+    img.style.width = '100%';
+    img.style.borderRadius = '8px';
+    img.style.marginBottom = '1.5rem';
+    img.addEventListener('error', function() {
+        this.src = 'https://via.placeholder.com/800x600?text=National+Park';
+    });
+    detailsContent.appendChild(img);
+    
+    // Create details content
+    const detailsHTML = document.createElement('div');
+    detailsHTML.innerHTML = `
         <h2 style="color: var(--primary-color); margin-bottom: 0.5rem;">${park.name}</h2>
         <p style="color: var(--text-secondary); margin-bottom: 1rem;">
             <strong>📍 Location:</strong> ${park.state}<br>
@@ -285,6 +313,7 @@ function showParkDetails(park) {
             </div>
         </div>
     `;
+    detailsContent.appendChild(detailsHTML);
     
     detailsModal.classList.remove('hidden');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
