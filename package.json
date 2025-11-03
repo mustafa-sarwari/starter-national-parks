@@ -2,7 +2,7 @@
   "name": "national-parks-explorer",
   "version": "1.0.0",
   "description": "An interactive web application to explore America's National Parks",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html --public-url ./",

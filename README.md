@@ -41,10 +41,7 @@ An interactive web application to explore America's beautiful National Parks. Bu
 ## 🖼️ Screenshots
 
 ### Desktop View
-![National Parks Explorer Desktop](https://via.placeholder.com/800x500?text=Desktop+View+-+Add+Your+Screenshot)
-
-### Mobile View
-![National Parks Explorer Mobile](https://via.placeholder.com/400x700?text=Mobile+View+-+Add+Your+Screenshot)
+![National Parks Explorer Desktop](https://github.com/user-attachments/assets/cb00dc5e-fb8a-475f-bd0e-a667e5e9c4b1)
 
 ---
 
